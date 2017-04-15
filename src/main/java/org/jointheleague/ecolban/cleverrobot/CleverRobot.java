@@ -28,7 +28,10 @@ public class CleverRobot extends IRobotAdapter {
 	}
 
 	private void setup() throws Exception {
-		
+		//
+		driveDirect(200,200);
+		Thread.sleep(1000);
+
 	}
 	
 	private boolean loop() throws Exception{
@@ -39,10 +42,10 @@ public class CleverRobot extends IRobotAdapter {
 		
 		return true;
 	}
-
 	private void shutDown() throws IOException {
 		reset();
 		stop();
 		closeConnection();
 	}
+
 }
