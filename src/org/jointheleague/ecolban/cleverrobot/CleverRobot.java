@@ -14,6 +14,7 @@ public class CleverRobot extends IRobotAdapter {
 	Sonar sonar = new Sonar();
 	private boolean tailLight;
 	Camera cam;
+
 	public CleverRobot(IRobotInterface iRobot) {
 		super(iRobot);
 	}
@@ -30,23 +31,21 @@ public class CleverRobot extends IRobotAdapter {
 	}
 
 	private void setup() throws Exception {
-		//driveDirect(100, 100);
-		cam = new Camera(100,100);
-		//for(int i : cam.pixels){
-		//	System.out.println(i);
-		//}
+		driveDirect(100, 100);
+		/*
+		 * Example Camera Code cam = new Camera(100,100); cam.takeRGBPicture();
+		 * System.out.println(cam.getRedPercentage(15,true)); System.out.println(cam.getBluePercentage(15,false));
+		 * System.out.println(cam.getGreenPercentage(15,false));
+		 */
 	}
 
 	private boolean loop() throws Exception {
-		//System.out.println("LEFT SONAR: " + sonar.readSonar("left"));
+		System.out.println("LEFT SONAR: " + sonar.readSonar("left"));
 		Thread.sleep(1000);
-		//setTailLight(tailLight = !tailLight);
-		//System.out.println("RIGHT SONAR: " + sonar.readSonar("right"));
-		//System.out.println("CENTER SONAR: " + sonar.readSonar("center"));
-		cam.takeRGBPicture();
-		System.out.println(cam.getRedPercentage(15,true));
-		System.out.println(cam.getBluePercentage(15,false));
-		System.out.println(cam.getGreenPercentage(15,false));
+		// setTailLight(tailLight = !tailLight);
+		System.out.println("RIGHT SONAR: " + sonar.readSonar("right"));
+		System.out.println("CENTER SONAR: " + sonar.readSonar("center"));
+
 		return true;
 	}
 
